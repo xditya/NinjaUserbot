@@ -24,12 +24,12 @@ DEFAULTUSER = (
 CUSTOM_MIDDLE_PMP = (
     str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else " "
 )
-USER_BOT_WARN_ZERO = "You Have Attempted To Spam the Pro, Ninja Naveen's Inbox So Inorder To Avoid Over Spam , You Have Been Blocked By Ninja Userbot"
+USER_BOT_WARN_ZERO = "You Have Attempted To Spam my Master's Inbox. So Inorder To Avoid Over Spam , You Have Been Blocked By Ninja Userbot"
 USER_BOT_NO_WARN = (
-    "**⚠️ Hello, This is Ninja Userbot PM Security ⚠️**\n\n"
-    f"`My Master haven't Approved you to PM yet.\nPlease Wait for him to look in and Approve your PM. He mostly Approve PM's`\n\n"
-    "**You May Leave your Message here And Wait Till He Approves You.\n\n\nUntil then Contact me through my Channel's Discussion Group! @Royal_Giveaway**\n\n"
-    "**Don't Spam his PM, you'll get blocked!** \n\n"
+    "**⚠️ Hey, This is Ninja Userbot PM Security ⚠️**\n\n"
+    f"`This is an Automated Message. My Master haven't Approved you to PM yet.\n\n"
+    "**You May Leave your Message here And Wait Till He Approves You.\n\n"
+    "**Don't Spam my master's PM, you'll get blocked!** \n\n"
     f"{CUSTOM_MIDDLE_PMP}"
 )
 

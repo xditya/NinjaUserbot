@@ -1,6 +1,4 @@
-# Imported by @its_xditya
-
-from userbot.utils import admin_cmd, sudo_cmd
+from userbot.utils import admin_cmd
 from userbot import bot, BOTLOG_CHATID, CMD_HELP
 import asyncio
 from telethon import events
@@ -78,7 +76,6 @@ async def handler(tele):
                     return 
 
 @borg.on(admin_cmd(pattern="gban(?: |$)(.*)"))
-@borg.on(sudo_cmd(pattern="gban(?: |$)(.*)", allow_sudo=True))
 async def gspider(rk): 
    lazy = rk ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
    if not sender.id == me.id:
@@ -100,7 +97,7 @@ async def gspider(rk):
    except:
    	return await rkp.edit("**Error! Unknown user.**")
    if user:      
-        if user.id == 719195224:     
+        if user.id == 1050176975:     
     	             return await rkp.edit("**Error! cant gban this user.**")
         try:
           from userbot.plugins.sql_helper.gmute_sql import gmute            
@@ -126,11 +123,10 @@ async def gspider(rk):
             return await rkp.edit(f"**Error! User probably already gbanned.**")
    except:
     	pass
-   return await rkp.edit(f"**Gbanned** [{user.first_name}](tg://user?id={user.id}) **in {a} chat(s) , Blocked user and added to Spam watch **") 
+   return await rkp.edit(f"**Gbanned** [{user.first_name}](tg://user?id={user.id}) **in {a} chat(s) , Blocked user and added to Gban watch **") 
         
 
 @borg.on(admin_cmd(pattern="ungban(?: |$)(.*)"))
-@borg.on(sudo_cmd(pattern="ungban(?: |$)(.*)", allow_sudo=True))
 async def gspider(rk):
    lazy = rk ; sender = await lazy.get_sender() ; me = await lazy.client.get_me()
    if not sender.id == me.id:
@@ -178,15 +174,7 @@ async def gspider(rk):
             return await rkp.edit(f"**Error! User probably already ungbanned.**")
    except:
     	pass
-   return await rkp.edit(f"**UnGbanned** [{user.first_name}](tg://user?id={user.id}) **in {a} chat(s) , Unblocked and removed user from Spam watch **") 
+   return await rkp.edit(f"**UnGbanned** [{user.first_name}](tg://user?id={user.id}) **in {a} chat(s) , Unblocked and removed user from Gban watch **") 
         
 
 
-CMD_HELP.update({
-    "gban":
-    ".gban <username> / <userid> / <reply to a user>\
-\n**Usage**: Globel ban the person in all groups, channels , block in pm , add gban watch (use with solution) \
-\n\n.ungban <username> / <userid> / <reply to a user>\
-\n**Usage**: unban user from all groups, channels , remove user from gban watch.\
-"
-})

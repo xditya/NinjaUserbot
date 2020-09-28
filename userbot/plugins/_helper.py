@@ -2,7 +2,7 @@ from userbot import CMD_LIST
 from userbot.utils import admin_cmd
 
 @command(pattern="^.help ?(.*)")
-#@borg.on(admin_cmd(pattern=r"help ?(.*)"))
+# @borg.on(admin_cmd(pattern=r"help ?(.*)"))
 async def cmd_list(event):
     if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
         tgbotusername = Var.TG_BOT_USER_NAME_BF_HER
@@ -24,7 +24,7 @@ async def cmd_list(event):
                         force_document=True,
                         allow_cache=False,
                         caption="**COMMANDS**",
-                        reply_to=reply_to_id
+                        reply_to=reply_to_id,
                     )
                     await event.delete()
             else:
@@ -34,19 +34,16 @@ async def cmd_list(event):
                 string = "Commands found in {}:".format(input_str)
                 for i in CMD_LIST[input_str]:
                     string += "    " + i
-                    string += "\n**© Ninja Userbot**"
+                    string += "\n"
                 await event.edit(string)
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = """Ninja Userbot Modules Are Listed Here !\n**For More Help or Support Contact @NinjaNaveen**\n\n"""
+            help_string = f"""Ninja Userbot Modules Are Listed Here !\n**For More Help or Support Contact @NinjaNaveen**\n\n"""
             results = await bot.inline_query(  # pylint:disable=E0602
-                tgbotusername,
-                help_string
+                tgbotusername, help_string
             )
             await results[0].click(
-                event.chat_id,
-                reply_to=event.reply_to_msg_id,
-                hide_via=True
+                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
             )
             await event.delete()

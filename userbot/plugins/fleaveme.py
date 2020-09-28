@@ -1,6 +1,4 @@
-
-
-............#Credit: @r4v4n4
+#Credit: @r4v4n4
 """Emoji
 
 Available Commands:

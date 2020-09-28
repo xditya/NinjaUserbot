@@ -24,7 +24,7 @@ async def cmd_list(event):
                         force_document=True,
                         allow_cache=False,
                         caption="**COMMANDS**",
-                        reply_to=reply_to_id,
+                        reply_to=reply_to_id
                     )
                     await event.delete()
             else:
@@ -44,6 +44,8 @@ async def cmd_list(event):
                 tgbotusername, help_string
             )
             await results[0].click(
-                event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True
+                event.chat_id,
+                reply_to=event.reply_to_msg_id,
+                hide_via=True
             )
             await event.delete()
